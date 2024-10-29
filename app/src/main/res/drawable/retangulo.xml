@@ -1,0 +1,13 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Definir a cor de fundo -->
+    <solid android:color="#9A9B92" /> <!-- Cor vermelha como exemplo -->
+
+    <!-- Arredondamento das bordas -->
+    <corners
+        android:topLeftRadius="40dp"
+        android:topRightRadius="40dp"
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="0dp" />
+</shape>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bancoAlimentos">
+
+    <TextView
+        android:id="@+id/textcaosemfome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppisregular"
+        android:text="Banco de Alimentos"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.197" />
+
+    <ImageView
+        android:id="@+id/arrowback"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/arrow_back" />
+
+    <TextView
+        android:id="@+id/textprincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppisregular"
+        android:gravity="center"
+        android:text="Atuação: São Paulo \n A associação recolhe \n alimentos fora do valor \n comercial, mas consumíveis, e \n os distribui a entidades sociais, contribuindo para a nutrição \n de milhares de pessoas."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textcaosemfome"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputdoacao"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/inputnome"
+        app:endIconMode="clear_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textprincipal"
+        app:layout_constraintVertical_bias="0.224">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputDoacaoBanco"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppisregular"
+            android:gravity="center"
+            android:hint="Digite sua doação"
+            android:textSize="22sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonavancartelafinal"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:textSize="20sp"
+        android:text="Avançar"
+        android:fontFamily="@font/poppisregular"
+        android:backgroundTint="@color/botaoAvancar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

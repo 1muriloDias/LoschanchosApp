@@ -3,6 +3,7 @@ package com.example.loschanchosapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -23,7 +24,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-        ImageView btn_avancar = findViewById(R.id.setaBaixa);
+        Button btn_avancar = findViewById(R.id.buttonT3);
         ImageView btn_voltar = findViewById(R.id.arrowback);
 
         // Corrigido o erro de capitalização para View.OnClickListener

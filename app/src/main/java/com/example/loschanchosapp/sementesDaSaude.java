@@ -3,6 +3,7 @@ package com.example.loschanchosapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,9 +17,14 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class sementesDaSaude extends AppCompatActivity {
 
     private TextInputEditText inputNome;
+    private Long usuarioId = 1L; // Substitua pelo ID real do usuário logado
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +41,39 @@ public class sementesDaSaude extends AppCompatActivity {
         btn_endpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Verificação de preenchimento
-                String nome = inputNome.getText().toString().trim();
-                if (TextUtils.isEmpty(nome)) {
-                    // Exibir mensagem de erro se o campo estiver vazio
+                // Obter a descrição da doação
+                String descricaoDoacao = inputNome.getText().toString().trim();
+                if (TextUtils.isEmpty(descricaoDoacao)) {
                     Toast.makeText(sementesDaSaude.this, "Por favor, insira sua doação.", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Se o campo estiver preenchido, avançar para a próxima tela
-                    Intent intent = new Intent(sementesDaSaude.this, endpage.class);
-                    startActivity(intent);
+                    // Criar a instância da API
+                    DoacaoApi doacaoApi = ApiClient.getClient().create(DoacaoApi.class);
+
+                    // Configurar a doação com a descrição
+                    Doacao doacao = new Doacao();
+                    doacao.setDescricao(descricaoDoacao);
+
+                    // Enviar a doação para o backend
+                    Call<Doacao> call = doacaoApi.criarDoacao(usuarioId, doacao); // Certifique-se de que "usuarioId" é o ID correto
+                    call.enqueue(new Callback<Doacao>() {
+                        @Override
+                        public void onResponse(Call<Doacao> call, Response<Doacao> response) {
+                            if (response.isSuccessful()) {
+                                Doacao novaDoacao = response.body();
+                                Log.d("API", "Doação criada: " + novaDoacao.getDescricao());
+                                // Avançar para a próxima tela após o sucesso
+                                Intent intent = new Intent(sementesDaSaude.this, endpage.class);
+                                startActivity(intent);
+                            } else {
+                                Log.e("API", "Erro ao criar doação: " + response.code());
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Doacao> call, Throwable t) {
+                            Log.e("API", "Erro de comunicação: " + t.getMessage());
+                        }
+                    });
                 }
             }
         });

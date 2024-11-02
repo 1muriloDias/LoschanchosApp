@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,49 +16,49 @@
         tools:targetApi="31">
         <activity
             android:name=".endpage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".instBorboletaAzul"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".sementesDaSaude"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".tucca"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".saude"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".caoSemFome"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".goodTruck"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".bancoAlimentos"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".alimento"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".vagalume"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".cincoElementos"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".cidadaoProMundo"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".roupa_t4"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity3"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity2"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

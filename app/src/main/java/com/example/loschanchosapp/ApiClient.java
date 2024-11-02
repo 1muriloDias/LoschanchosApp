@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    private static final String BASE_URL = "http://seu-backend-url.com/";
+    private static final String BASE_URL = "https://localhost:7238/swagger/v1/swagger.json/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
